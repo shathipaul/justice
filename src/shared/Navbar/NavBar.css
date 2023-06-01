@@ -1,0 +1,27 @@
+.nav-container {
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .btn-width {
+    width: 200px;
+  }
+  .nav-btn-style-hide {
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+  .menu-icon-style {
+    height: 25px;
+    width: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .menu-icon-color {
+    color: #7E8699;
+  }
+  .removeUnderline {
+    text-decoration: none !important;
+  }
+  .header-zIndex {
+    z-index: 9999;
+  }
+
