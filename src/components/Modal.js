@@ -20,9 +20,9 @@ const Modal = ({ handleDrawer, register, handleSubmit, data, errors, onSubmit })
 
 
     return (
-        <div className=" bg-gray-500 bg-opacity-75 flex items-center justify-end overflow-auto">
-            <div className="bg-white p-6">
-                <div className="flex justify-between items-center">
+        <div className="flex items-center justify-end overflow-auto bg-gray-500 bg-opacity-75 shadow-2xl">
+            <div className="p-6 bg-white">
+                <div className="flex items-center justify-between">
                     <h2 className="text-lg font-semibold">Book a free consultation</h2>
                     {
                         data ?
@@ -46,7 +46,7 @@ const Modal = ({ handleDrawer, register, handleSubmit, data, errors, onSubmit })
                             placeholder="Your Name"
                             name='name'
                             {...register("name", { required: true })}
-                            className="rounded bg-gray-100 py-2 pl-2"
+                            className="py-2 pl-2 bg-gray-100 rounded"
                         />
                         {errors.name && <span>This field is required</span>}
 
@@ -55,7 +55,7 @@ const Modal = ({ handleDrawer, register, handleSubmit, data, errors, onSubmit })
                             placeholder="Your Email"
                             name='email'
                             {...register("email", { required: true })}
-                            className="rounded bg-gray-100 py-2 pl-2 my-3"
+                            className="py-2 pl-2 my-3 bg-gray-100 rounded"
                         />
                         {errors.email && <span>This field is required</span>}
 
@@ -64,13 +64,13 @@ const Modal = ({ handleDrawer, register, handleSubmit, data, errors, onSubmit })
                             value={date}
                             name='date'
                             {...register("date", { required: true, disabled: true })}
-                            className="rounded bg-gray-100 py-2 pl-2"
+                            className="py-2 pl-2 bg-gray-100 rounded"
                         />
                         {errors.date && <span>This field is required</span>}
                         <select {...register("time", { required: true })}
                             placeholder="Mention your preferred time"
                             name='time'
-                            className="rounded bg-gray-100 py-3 pl-1 my-3"
+                            className="py-3 pl-1 my-3 bg-gray-100 rounded"
                         >
                             <option value="10am">10am</option>
                             <option value="11am">11am</option>

@@ -25,9 +25,9 @@ const Reviews = () => {
 
   return (
     <>
-      <div className='text-center py-8'>
-        <h2 className='custom-font text-2xl font-bold pb-2'>What Our Client Say</h2>
-        <p className='w-4/5 lg:w-3/5 m-auto text-sm'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+      <div className='py-8 text-center'>
+        <h2 className='pb-2 text-2xl font-bold custom-font'>What Our Client Say</h2>
+        <p className='w-4/5 m-auto text-sm lg:w-3/5'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
       </div>
 
       <Swiper navigation={true} modules={[Navigation]}
@@ -35,22 +35,22 @@ const Reviews = () => {
         loop={true}
         pagination={{
           clickable: true
-        }} className="mySwiper rounded-lg">
+        }} className="rounded-lg mySwiper">
         {
           reviewData.map(data => <SwiperSlide key={data.id} className="text-white">
 
             <div className='img-gradient'>
-              <img src={banner} alt='' />
+              <img className='w-full' src={banner} alt='' />
             </div>
 
-            <div className="absolute flex flex-col justify-center items-center transform -translate-y-1/2 left-16 right-5 top-1/2">
-              <img className='w-10 h-10 md:w-20 md:h-20 rounded-full object-cover border-2 border-slate-50' src={data.img} alt='' />
+            <div className="absolute flex flex-col items-center justify-center transform -translate-y-1/2 left-16 right-5 top-1/2">
+              <img className='object-cover w-10 h-10 border-2 rounded-full md:w-20 md:h-20 border-slate-50' src={data.img} alt='' />
               <div className=' lg:mt-4 lg:mb-6'>
-                <p className='custom-font md:text-xl font-bold text-center'>{data.name}</p>
-                <p className='text-center text-sm md:text-base'>{data.position}</p>
+                <p className='font-bold text-center custom-font md:text-xl'>{data.name}</p>
+                <p className='text-sm text-center md:text-base'>{data.position}</p>
               </div>
-              <p className='hidden md:block w-4/5 xl:w-3/5 text-center text-sm'>{data.des}</p>
-              <p className='md:hidden text-center text-xs'>{data.des.slice(0, 70)}...</p>
+              <p className='hidden w-4/5 text-sm text-center md:block xl:w-3/5'>{data.des}</p>
+              <p className='text-xs text-center md:hidden'>{data.des.slice(0, 70)}...</p>
             </div>
           </SwiperSlide>)
         }
