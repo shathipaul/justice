@@ -7,12 +7,12 @@ import { toast } from 'react-toastify';
 
 const Modal = ({ handleDrawer, register, handleSubmit, data, errors, onSubmit }) => {
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const date = format(selectedDate, 'PP');
+    const date = format(selectedDate, 'yyyy-MM-dd');
     // const { register, handleSubmit, data, reset, formState: { errors } } = useForm();
 
     // const onSubmit = (data) => {
     //     console.log(data);
-    //     reset()
+    //     reset();
     //     if (data) {
     //         toast.success('Consultation Booked');
     //     }
@@ -20,13 +20,21 @@ const Modal = ({ handleDrawer, register, handleSubmit, data, errors, onSubmit })
 
 
     return (
-        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-end">
-            <div className="bg-white shadow-lg p-6">
-                <div className="flex justify-between items-center my-4">
+        <div className=" bg-gray-500 bg-opacity-75 flex items-center justify-end overflow-auto">
+            <div className="bg-white p-6">
+                <div className="flex justify-between items-center">
                     <h2 className="text-lg font-semibold">Book a free consultation</h2>
-                    <button onClick={handleDrawer} className={`${data ? '' : 'pointer-events-none'}`} >
-                        <RxCross1 />
-                    </button>
+                    {
+                        data ?
+                            <button type='button' onClick={handleDrawer} className='pointer-events-none' >
+                                <RxCross1 />
+                            </button>
+                            :
+                            <button type='button' onClick={handleDrawer} >
+                                <RxCross1 />
+                            </button>
+                    }
+
                 </div>
                 <Calendar
                     selectedDate={selectedDate}
@@ -54,7 +62,6 @@ const Modal = ({ handleDrawer, register, handleSubmit, data, errors, onSubmit })
                         <input
                             type="text"
                             value={date}
-                            placeholder="Select your preferred date"
                             name='date'
                             {...register("date", { required: true, disabled: true })}
                             className="rounded bg-gray-100 py-2 pl-2"
@@ -74,7 +81,7 @@ const Modal = ({ handleDrawer, register, handleSubmit, data, errors, onSubmit })
                         </select>
                         {errors.time && <span>This field is required</span>}
 
-                        <button onClick={handleDrawer} type="submit" className="navBtn">Book Consultation</button>
+                        <button type="submit" className="navBtn">Book Consultation</button>
                     </form>
                 </div>
 

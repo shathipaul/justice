@@ -1,9 +1,9 @@
 import React from 'react';
-import video from '../../src/assets/users/98642-error-404.mp4'
+import video from '../assets/users/coming-soon-8707643-7035801.mp4'
 
-const ErrorPage = () => {
+const Cases = () => {
     return (
-        <div className='flex justify-center items-center'>
+        <div className='flex justify-center items-center h-screen'>
             <video autoPlay loop >
                 <source type="video/mp4" src={video} />
             </video>
@@ -11,4 +11,4 @@ const ErrorPage = () => {
     );
 };
 
-export default ErrorPage;
+export default Cases;

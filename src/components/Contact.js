@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import location from '../assets/images/location.png'
-import call from '../assets/images/call.png'
-import email from '../assets/images/email.png'
-import time from '../assets/images/time.png'
+import location from '../assets/images/location.png';
+import call from '../assets/images/call.png';
+import email from '../assets/images/email.png';
+import time from '../assets/images/time.png';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,7 +12,7 @@ const Contact = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        reset()
+        reset();
         if (data) {
             toast.success('Thanks for your message');
         }
@@ -31,11 +31,11 @@ const Contact = () => {
         { id: 2, title: 'Call Us', des: '+88 01750 00 00 00', icon: call },
         { id: 3, title: 'Email Us', des: 'info@gmail.com', icon: email },
         { id: 4, title: 'Working Hours', des: 'Mon-Fri: 9AM to 5PM Sunday: 9AM to 1 PM', icon: time },
-    ]
+    ];
 
     return (
         <>
-            <div className='text-center py-8'>
+            <div id='contact' className='text-center my-10'>
                 <h2 className='custom-font text-2xl font-bold pb-2'>Contact with Us</h2>
                 <p className='w-4/5 lg:w-3/5 m-auto text-sm'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
             </div>

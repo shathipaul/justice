@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from '../assets/images/logo.png';
 import { BsSend } from 'react-icons/bs';
-import email from '../assets/images/email.png'
-import call from '../assets/images/call.png'
-import location from '../assets/images/location.png'
+import email from '../assets/images/email.png';
+import call from '../assets/images/call.png';
+import location from '../assets/images/location.png';
 
 const Footer = () => {
     return (
-        <div className='bg-black text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6 p-16 text-sm'>
+        <div className='bg-black text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6 p-12 md:p-16 text-sm'>
             <div >
                 <img src={logo} className='pb-6 w-32' alt='' />
                 <p className='text-sm lg:w-1/2'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>

@@ -1,41 +1,42 @@
 import React, { useEffect, useState } from 'react';
-import './NavBar.css'
-import logo from '../../assets/images/logo2.png'
-import menu from '../../assets/icon/menu.png'
+import './NavBar.css';
+import logo from '../../assets/images/logo2.png';
+import menu from '../../assets/icon/menu.png';
 import { Link } from 'react-router-dom';
 import Modal from '../../components/Modal';
-import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 
-const NavLogo = () => {
+const NavLogo = ({ register, handleSubmit, data, reset, errors }) => {
     const [expand, setExpand] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const { register, handleSubmit, data, reset, formState: { errors } } = useForm();
+
 
     const onSubmit = (data) => {
         console.log(data);
-        reset()
-
+        handleDrawer();
+        reset();
     };
-    useEffect(() => {
-        if (data) {
-            toast.success('Consultation Booked');
-        }
-    }, [data])
+
+
+    // useEffect(() => {
+    //     if (data) {
+    //         toast.success('Consultation Booked');
+    //     }
+    // }, [data]);
 
 
     const navData = [
         { id: 1, nav: 'Home', link: '/', type: 'home' },
         { id: 2, nav: 'Services', link: '/', type: 'home' },
-        { id: 3, nav: 'Cases', link: '/', type: 'home' },
-        { id: 4, nav: 'Blog', link: '/', type: 'home' },
-        { id: 5, nav: 'Contact Us', link: '/', type: 'home' },
+        { id: 3, nav: 'Cases', link: '/cases', type: 'home' },
+        { id: 4, nav: 'Blog', link: '/blog', type: 'home' },
+        { id: 5, nav: 'Contact Us', link: 'contact', type: 'home' },
     ];
 
     const handleExpand = () => {
         setExpand(!expand);
-    }
+    };
 
     const handleDrawer = () => {
         setIsOpen(!isOpen);
